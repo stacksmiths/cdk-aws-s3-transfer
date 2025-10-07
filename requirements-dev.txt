@@ -1,0 +1,40 @@
+# Development dependencies
+# Install with: pip install -r requirements-dev.txt
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Code formatting and linting
+black>=22.0.0
+isort>=5.12.0
+pylint>=2.15.0
+mypy>=1.0.0
+autoflake>=2.0.0
+
+# Pre-commit hooks
+pre-commit>=2.20.0
+
+# Development tools
+ipython>=8.0.0
+jupyter>=1.0.0
+
+# Security tools
+bandit>=1.7.0
+safety>=2.0.0
+
+# Testing and coverage
+pytest-cov>=4.0.0
+coverage>=7.0.0
+
+# Code quality
+flake8>=6.0.0
+mypy>=1.0.0
+
+# Package building
+build>=0.10.0
+twine>=4.0.0
+
+# CDK CLI (installed via npm)
+# Note: CDK CLI requires Node.js and npm
+# Install with: npm install -g aws-cdk

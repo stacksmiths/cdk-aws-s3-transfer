@@ -1,0 +1,189 @@
+[MASTER]
+# Use multiple processes to speed up Pylint
+jobs=1
+
+# Pickle collected data for later comparisons
+persistent=yes
+
+# List of plugins (as comma separated values of python modules names) to load
+load-plugins=
+
+# Use comma separated list of builtin checkers to enable
+enable=all
+
+# Use comma separated list of checkers to disable
+disable=
+    C0114,  # missing-module-docstring
+    C0116,  # missing-function-docstring
+    R0903,  # too-few-public-methods
+    R0913,  # too-many-arguments
+    W0613,  # unused-argument
+    C0103,  # invalid-name
+
+# Allow optimization of some AST trees
+optimize-ast=no
+
+[MESSAGES CONTROL]
+# Only show warnings with the listed confidence levels
+confidence=
+
+# Enable the message, report, category or checker with the given id(s)
+enable=
+
+# Disable the message, report, category or checker with the given id(s)
+disable=
+
+[REPORTS]
+# Set the output format
+output-format=text
+
+# Put messages in a separate file
+reports=no
+
+# Python code to execute, usually for sys.path manipulation
+init-hook=
+
+# Use multiple processes to speed up Pylint
+jobs=1
+
+# Allow loading of arbitrary C extensions
+unsafe-load-any-extension=no
+
+# A comma-separated list of package or module names from where C extensions may
+# be loaded
+extension-pkg-whitelist=
+
+[VARIABLES]
+# Tells whether we should check for unused import in __init__ files
+init-import=no
+
+# A regular expression matching the name of dummy variables
+dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
+
+# List of additional names supposed to be defined in builtins
+additional-builtins=
+
+# List of strings which can identify a callback function by name
+callbacks=cb_,
+          _cb
+
+# List of qualified module names which can have objects that can redefine
+# builtins
+redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
+
+[FORMAT]
+# Maximum number of characters on a single line
+max-line-length=88
+
+# Regexp for a line that is allowed to be longer than the limit
+ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+
+# Allow the body of an if to be on the same line as the test if there is no
+# else
+single-line-if-stmt=no
+
+# List of optional constructs for which whitespace checking is disabled
+no-space-check=
+
+# Maximum number of lines in a module
+max-module-lines=1000
+
+# String used as indentation unit
+indent-string='    '
+
+# Number of spaces of indent required inside a hanging or continued line
+indent-after-paren=4
+
+# Expected format of line ending
+expected-line-ending-format=
+
+[MISCELLANEOUS]
+# List of note tags to take in consideration
+notes=FIXME,
+      XXX,
+      TODO
+
+[SIMILARITIES]
+# Minimum lines number of a similarity
+min-similarity-lines=4
+
+# Ignore comments when computing similarities
+ignore-comments=yes
+
+# Ignore docstrings when computing similarities
+ignore-docstrings=yes
+
+# Ignore imports when computing similarities
+ignore-imports=no
+
+[SPELLING]
+# Spelling dictionary name
+spelling-dict=
+
+# List of comma separated words that should not be checked
+spelling-ignore-words=
+
+# A path to a file that contains the private dictionary
+spelling-private-dict-file=
+
+# Tells whether to store unknown words to the private dictionary
+spelling-store-unknown-words=no
+
+[LOGGING]
+# The type of string formatting that logging methods do
+logging-format-style=old
+
+# Logging modules to check
+logging-modules=logging
+
+[TYPECHECK]
+# List of decorators that produce context managers
+contextmanager-decorators=contextlib.contextmanager
+
+# List of members which are set dynamically
+generated-members=
+
+# List of valid names for the first argument in a class method
+valid-classmethod-first-arg=cls
+
+# List of valid names for the first argument in a metaclass class method
+valid-metaclass-classmethod-first-arg=cls
+
+# List of strings which can identify a callback function by name
+callbacks=cb_,
+          _cb
+
+# List of qualified module names which can have objects that can redefine
+# builtins
+redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
+
+[DESIGN]
+# Maximum number of arguments for function / method
+max-args=5
+
+# Maximum number of attributes for a class
+max-attributes=7
+
+# Maximum number of boolean expressions in an if statement
+max-bool-expr=5
+
+# Maximum number of branch for function / method body
+max-branches=12
+
+# Maximum number of locals for function / method body
+max-locals=15
+
+# Maximum number of parents for a class
+max-parents=7
+
+# Maximum number of public methods for a class
+max-public-methods=20
+
+# Maximum number of return / yield for function / method body
+max-returns=6
+
+# Maximum number of statements in function / method body
+max-statements=50
+
+# Minimum lines number of a similarity
+min-similarity-lines=4
