@@ -1,0 +1,54 @@
+{
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.banditEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "python.sortImports.args": ["--profile", "black"],
+  "python.linting.pylintArgs": ["--rcfile=pylintrc", "--disable=C0114,C0116"],
+  "python.linting.mypyArgs": [
+    "--ignore-missing-imports",
+    "--follow-imports=silent"
+  ],
+  "python.linting.flake8Args": [
+    "--max-line-length=88",
+    "--extend-ignore=E203,W503"
+  ],
+  "python.linting.banditArgs": ["-r", "cdk_aws_s3_transfer/"],
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/cdk.out": true,
+    "**/node_modules": true
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll.pylint": "explicit",
+    "source.fixAll.black": "explicit"
+  },
+  "python.linting.autoflakeEnabled": true,
+  "python.linting.autoflakeArgs": [
+    "--remove-all-unused-imports",
+    "--remove-unused-variables",
+    "--in-place"
+  ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["cdk.json"],
+      "url": "https://raw.githubusercontent.com/aws/aws-cdk/main/packages/@aws-cdk/cdk-cli/lib/schema/cdk.schema.json"
+    }
+  ]
+}

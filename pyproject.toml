@@ -1,0 +1,117 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cdk-aws-s3-transfer"
+version = "0.1.0"
+description = "AWS CDK example for accelerated S3 data transfer"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "StackSmiths", email = "contact@stacksmiths.com"}
+]
+keywords = ["aws", "cdk", "s3", "transfer", "acceleration", "cloudformation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration",
+]
+
+dependencies = [
+    "aws-cdk-lib>=2.0.0",
+    "constructs>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "isort>=5.12.0",
+    "pylint>=2.15.0",
+    "mypy>=1.0.0",
+    "autoflake>=2.0.0",
+    "pre-commit>=2.20.0",
+    "ipython>=8.0.0",
+    "jupyter>=1.0.0",
+    "bandit>=1.7.0",
+    "safety>=2.0.0",
+    "coverage>=7.0.0",
+    "flake8>=6.0.0",
+    "build>=0.10.0",
+    "twine>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/stacksmiths/cdk-aws-s3-transfer"
+Repository = "https://github.com/stacksmiths/cdk-aws-s3-transfer"
+Issues = "https://github.com/stacksmiths/cdk-aws-s3-transfer/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cdk_aws_s3_transfer*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["cdk_aws_s3_transfer"]
+omit = [
+    "*/tests/*",
+    "*/venv/*",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
