@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "AWS CDK example for accelerated S3 data transfer"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "StackSmiths", email = "contact@stacksmiths.com"}
 ]
@@ -16,7 +16,6 @@ keywords = ["aws", "cdk", "s3", "transfer", "acceleration", "cloudformation"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
