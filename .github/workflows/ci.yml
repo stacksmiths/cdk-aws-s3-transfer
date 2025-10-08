@@ -125,34 +125,34 @@ jobs:
           source venv/bin/activate
           python -m build
 
-            - name: Check package
-              run: |
-                  source venv/bin/activate
-                  twine check dist/*
+      - name: Check package
+        run: |
+          source venv/bin/activate
+          twine check dist/*
 
-            - name: Create Git Tag
-              run: |
-                  git config --local user.email "action@github.com"
-                  git config --local user.name "GitHub Action"
-                  git tag -a "v${{ github.run_number }}" -m "Release v${{ github.run_number }}"
-                  git push origin "v${{ github.run_number }}"
+      - name: Create Git Tag
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git tag -a "v${{ github.run_number }}" -m "Release v${{ github.run_number }}"
+          git push origin "v${{ github.run_number }}"
 
-            - name: Create Release
-              uses: softprops/action-gh-release@v2
-              with:
-                  tag_name: v${{ github.run_number }}
-                  name: Release v${{ github.run_number }}
-                  body: |
-                      ## Changes
-                      - Automated release from main branch
-                      - All tests passed
-                      - Security scans passed
-                      - CDK synthesis successful
-                      
-                      ## Installation
-                      ```bash
-                      pip install git+https://github.com/${{ github.repository }}.git@v${{ github.run_number }}
-                      ```
-                  files: dist/*
-                  draft: false
-                  prerelease: false
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Release v${{ github.run_number }}
+          body: |
+            ## Changes
+            - Automated release from main branch
+            - All tests passed
+            - Security scans passed
+            - CDK synthesis successful
+
+            ## Installation
+            ```bash
+            pip install git+https://github.com/${{ github.repository }}.git@v${{ github.run_number }}
+            ```
+          files: dist/*
+          draft: false
+          prerelease: false
