@@ -103,6 +103,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test, security, cdk-synthesis]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+      packages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
